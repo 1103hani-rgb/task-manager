@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager — Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">Task Manager</div>
+    <div class="nav-right">
+      <span id="welcomeUser"></span>
+      <button class="btn btn-small" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+  <div class="dashboard">
+    <div class="add-task-box">
+      <h2>Add New Task</h2>
+      <form id="addTaskForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="taskTitle" placeholder="Task title" required />
+          </div>
+          <div class="form-group">
+            <label>Priority</label>
+            <select id="taskPriority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Due Date</label>
+            <input type="date" id="taskDueDate" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="taskDescription" placeholder="Task description" rows="2"></textarea>
+        </div>
+        <button type="submit" class="btn">Add Task</button>
+      </form>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="pending">Pending</button>
+      <button class="filter-btn" data-filter="in-progress">In Progress</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+    <div id="tasksList">
+      <p class="loading">Loading tasks...</p>
+    </div>
+  </div>
+  <script src="/js/tasks.js"></script>
+</body>
+</html>
